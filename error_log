@@ -1,0 +1,4 @@
+[23-Feb-2016 02:23:19 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /home/u2442910/public_html/application/models/model_iklan.php on line 112
+[23-Feb-2016 03:01:10 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /home/u2442910/public_html/application/models/model_iklan.php on line 112
+[24-Feb-2016 09:37:49 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /home/u2442910/public_html/application/models/model_iklan.php on line 112
+[24-Feb-2016 09:37:50 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /home/u2442910/public_html/application/models/model_iklan.php on line 112
