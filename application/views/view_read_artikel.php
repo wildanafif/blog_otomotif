@@ -5,30 +5,18 @@
 	  	<?php echo $direktori; ?>
 	  	<div class="konten_artikel" style="background-color: #EEE; margin-bottom: 15px;">
 		  	<div class="container-fluid" style="" >
-		  		<div style="margin-top:15px; color: #8c8c8c">Sabtu 5 maret 2016</div>
+		  		<div style="margin-top:15px; color: #8c8c8c"><?php echo $artikel['waktu'] ?></div>
 		  		
-	  			<h3 style="color: #21409b;margin-top:15px;" >Bupati Banyuwangi Minta KNKT Segera Selidiki Tenggelamnya Kapal Rafelia</h3>
+	  			<h3 style="color: #21409b;margin-top:15px;" ><b><?php echo $artikel['judul_artikel']; ?></b></h3>
 
-	  			<img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image" style="margin-top:15px">
+	  			<img src="<?php echo $artikel['header_image']; ?>" class="img-responsive" alt="<?php echo $artikel['judul_artikel']; ?>" style="margin-top:15px">
 			  	<div class="isi_konten" style="margin-top:15px">
 			  		<p style="margin-top:15px ;margin-bottom: 15px; font-size:17px; " >
-			  			Banyuwangi - Sebanyak 76 orang selamat dan 4 masih hilang dalam tenggelamnya kapal Rafelia II di Selat Bali, sekitar 1 Km dari dermaga LCM Ketapang. Bupati Banyuwangi Abdullah Azwar Anas, meminta Komite Nasional Keselamatan Transportasi (KNKT) segera menyelidiki penyebab musibah itu.
-
-						"Terkait dengan penyelidikan, kita minta pihak KNKT segera turun ke lapangan. Hasilnya kita akan jadikan evaluasi agar tidak terjadi lagi kecelakaan laut di selat Bali," ucap Azwar Anas di kantor ASDP Banyuwangi, Jumat (4/3/2016) malam.
-
-						Baca juga: 4 Orang Masih Hilang dalam Tenggelamnya Kapal Rafalia, 76 Selamat
-
-						Menurutnya, karakteristik selat Bali berbeda dengan perairan yang lain, sehingga sangat penting untuk meningkatkan keselamatan transportasi di Selat Bali. Selain itu, Anas juga berharap kepada otoritas pelabuhan untuk memperhatikan kondisi setiap kapal
-
-						"Otoritas pelabuhan diharapkan bisa memperketat kebaikan kapal dan beban tonase kendaraan yang akan diangkut. Tak hanya itu, jembatan-jembatan timbang harus mengawasi kendaraan yang menyeberang. Bukan hanya tilang, kendaraan yang lebih muatannya harus dikurangi," paparnya.
-
-						Sementara, terkait manifes yang simpang siur lantaran tidak terdata dengan baik, Anas juga meminta harus dievaluasi. Sebab saat ini ASDP dan Syahbandar masih hanya menghitung kendaraan dan tidak menghitung penumpang. 
-
-						"Untungnya pihak kepolisian dan TNI melakukan pendataan dari hasil wawancara korban selamat. Pola manifest kapal harus diperbaiki," tegasnya.
-
+			  			<?php echo $artikel['isi']; ?>
 			  		</p>
 			  		
 			  	</div>	
+			  	<br>
 			  	<h4 style="float: left; margin-top: 10px; color: #8c8c8c; "  > Bagikan : </h4>		  		
 			  	<div class="share-buttons" style="margin-bottom: 20px;">
 					<!-- Facebook -->

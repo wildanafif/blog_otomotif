@@ -4,20 +4,21 @@ class Home extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('model_iklan');
+        $this->load->model('model_global');
         session_start();
         }
 
         function index(){
-            $data['iklan']=$this->model_iklan->query_getAll("SELECT * FROM `iklan` ORDER BY `id_iklan` DESC limit 4");
-           
-            $data['title']=  "Otomotif Store";
-            $data['kategori']=  $this->model_iklan->getAll_kategori();
-            $data['prov']=$this->model_iklan->query_getAll("SELECT * From provinsi");
-            if (isset($_SESSION['id_user'])) {
-              $data['favorit']=$this->model_iklan->query_for_control("SELECT count(id_favorite) as favorit from favorite where id_user=".$_SESSION['id_user']);
+            $data['artikel']=$this->model_global->query_for_control("SELECT * FROM `artikel` ORDER BY `id_artikel` DESC limit 1");
+            $data['popular_artikel']=$this->model_global->query_getAll("SELECT * FROM `artikel` ORDER BY `view` DESC limit 3");
+            $data['side_bar_iklan']=$this->model_global->query_getAll("SELECT * FROM `iklan` ORDER BY `id_iklan` DESC limit 5");
+            $data['hot_artikel']=$this->model_global->query_getAll("SELECT * FROM `artikel` where id_artikel != ".$data['artikel']['id_artikel']. " ORDER BY `id_artikel` DESC limit 5");
 
-            }
+           //echo $data['artikel']['header_image'];
+            $data['title']=  "Otomotif Store";
+            // $data['kategori']=  $this->model_iklan->getAll_kategori();
+            // $data['prov']=$this->model_iklan->query_getAll("SELECT * From provinsi");
+          
             $this->load->view('head',$data);
             $this->load->view('view_home',$data);
             $this->load->view('footer', $data);

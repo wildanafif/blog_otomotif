@@ -28,17 +28,17 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <form class="form-horizontal">
+                  <form class="form-horizontal" method="POST" action="<?php echo site_url(); ?>posting/add">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control"  placeholder="Judul . . .">
+                        <input type="text" class="form-control" name="judul"  placeholder="Judul . . .">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Kategori</label>
                       <div class="col-sm-10">
-                        <select class="form-control">
+                        <select class="form-control" name="kategori">
                           <option></option>
                           <option>Mobil</option>
                           <option>Motor</option>
@@ -49,9 +49,15 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Header image</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="header_image"  placeholder="http://">
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Isi </label>
                       <div class="col-sm-10">
-                        <textarea class="ckeditor" name="editor" id="editor1"></textarea>
+                        <textarea class="ckeditor" name="editor" id="editor1"  ></textarea>
     <script type="text/javascript">
        CKEDITOR.replace( 'editor1',
 {
@@ -69,15 +75,14 @@
                   
                     <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Sign in</button>
+                         <button type="submit" class="btn btn-sm btn-info btn-flat pull-right">Simpan Artikel </button>
+
                       </div>
                     </div>
                   </form>
 
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                  <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
             </div><!-- /.col -->

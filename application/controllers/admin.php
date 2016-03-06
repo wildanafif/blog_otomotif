@@ -9,7 +9,7 @@ class Admin extends CI_Controller {
         }
 
         function index(){
-            
+            $data['title']="Admin";
             $this->load->view('admin/head',$data);
             $this->load->view('admin/view_home',$data);
             $this->load->view('admin/footer', $data);

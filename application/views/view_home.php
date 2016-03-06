@@ -6,9 +6,10 @@
         <div style="margin-top:-20px;">
           <h5 style="color:#39F; margin-bottom:10px;"  >News Artikel</h5>
 
-          <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-          <a href="<?php echo site_url(); ?>page/read/berita/11-01-2015/judul">
-            <h2 style="margin-top:20px;">Gara-Gara Bersendawa, Pria Austria Kena Denda Rp 1 Juta</h2>
+          <img src="<?php echo $artikel['header_image']; ?>" class="img-responsive" alt="<?php echo $artikel['judul_artikel']; ?>">
+          <p style="font-size:12px;margin-top:7px;color:#999999;" ><?php echo $artikel['waktu']; ?></p>
+          <a href="<?php echo site_url(); ?>page/read/<?php echo $artikel['kategori']; ?>/<?php echo $artikel['judul_url']; ?>">
+            <h2 style="margin-top:-10px;"><?php echo $artikel['judul_artikel']; ?></h2>
             
           </a>
         </div>
@@ -17,34 +18,19 @@
       <div class="container-fluid" >
        <h4 style="color:#39F; margin-bottom:10px;"  >Popular Artikel</h4>
         <div class="row">
+        <?php foreach ($popular_artikel as $key ) { ?>
+         
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
+              <img src="<?php echo $key->header_image ?>" class="img-responsive" alt="<?php echo $key->judul_artikel; ?>">
               <div class="caption">
-                <p style="font-size:12px;margin-bottom:7px;color:#999999;" >22 Feb 2015</p>
-                <h4><a href=""  >Mobil Murah</a></h4>
+                <p style="font-size:12px;margin-bottom:7px;color:#999999;" ><?php echo $key->waktu; ?></p>
+                <h4><a href="<?php echo site_url(); ?>page/read/<?php echo $key->kategori ?>/<?php echo $key->judul_url; ?>"  ><?php echo $key->judul_artikel; ?></a></h4>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              <div class="caption">
-                <p style="font-size:12px;margin-bottom:7px;color:#999999;" >22 Feb 2015</p>
-                <h4><a href=""  >Mobil Murah</a></h4>
-              </div>
-            </div>
-          </div>
-           <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              <div class="caption">
-                <p style="font-size:12px;margin-bottom:7px;color:#999999;" >22 Feb 2015</p>
-                <h4><a href=""  >Mobil Murah</a></h4>
-              </div>
-            </div>
-          </div>
-        
+       <?php  } ?>
+         
           
         </div>
         
@@ -53,36 +39,20 @@
       <div class="panel panel-default">
       
           <div class="panel-body">
+          <?php foreach ($hot_artikel as $key) { ?>
+           
              <div class="row">
 
                 <div class="col-xs-5 col-md-5"> 
-                  <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
+                  <img src="<?php echo $key->header_image; ?>" class="img-responsive" alt="<?php echo $key->judul_artikel; ?>">
                 </div>
-                <div class="col-xs-5 col-md-7"><h4><a href=""  >Gara-Gara Bersendawa, Pria Austria Kena Denda Rp 1 Juta</a></h4>
-                    <p style="font-size:12px;margin-bottom:7px;margin-top: 10px; color:#999999;" >22 Feb 2015</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-
-                <div class="col-xs-5 col-md-5"> 
-                  <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-                </div>
-                <div class="col-xs-5 col-md-7"><h4><a href=""  >Gara-Gara Bersendawa, Pria Austria Kena Denda Rp 1 Juta</a></h4>
-                    <p style="font-size:12px;margin-bottom:7px;margin-top: 10px; color:#999999;" >22 Feb 2015</p>
+                <div class="col-xs-5 col-md-7"><h4><a href="<?php echo site_url(); ?>page/read/<?php echo $key->kategori ?>/<?php echo $key->judul_url; ?>"  ><?php echo $key->judul_artikel; ?></a></h4>
+                    <p style="font-size:12px;margin-bottom:7px;margin-top: 10px; color:#999999;" ></p><?php echo $key->waktu; ?></p>
                 </div>
               </div>
               <hr>
-              <div class="row">
-
-                <div class="col-xs-5 col-md-5"> 
-                  <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-                </div>
-                <div class="col-xs-5 col-md-7"><h4><a href=""  >Gara-Gara Bersendawa, Pria Austria Kena Denda Rp 1 Juta</a></h4>
-                    <p style="font-size:12px;margin-bottom:7px;margin-top: 10px; color:#999999;" >22 Feb 2015</p>
-                </div>
-              </div>
-              <hr>  
+          <?php } ?>
+               
           
           </div>
         </div>
@@ -105,46 +75,18 @@
        <div class="panel panel-primary">
           <div class="panel-heading" >Iklan Otomotifstore.com</div>
           <div class="panel-body">
+          <?php foreach ($side_bar_iklan as $key) { ?>
+            
              <div class="row">
 
               <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
+                <img src="<?=base_url()?><?php echo $key->temp_foto; ?>" class="img-responsive" alt="Responsive image">
               </div>
-              <div class="col-xs-5 col-md-7"><a href="" >Ban mobil murah</a></div>
+              <div class="col-xs-5 col-md-7"><a target="_BLANK" href="http://localhost/otomotif/iklan/view/<?php echo $key->id_iklan; ?>/<?php echo $key->waktu; ?>" ><?php echo $key->judul_iklan; ?></a></div>
             </div>
             <hr>
-            <div class="row">
-
-              <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              </div>
-              <div class="col-xs-5 col-md-7"><a href="" >Ban mobil murah</a></div>
-            </div>
-            <hr>
-            <div class="row">
-
-              <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              </div>
-              <div class="col-xs-5 col-md-7"><a href="" >Ban mobil murah</a></div>
-            </div>
-            <hr>
-            <div class="row">
-
-              <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              </div>
-              <div class="col-xs-5 col-md-7"><a href="" >Ban mobil murah</a></div>
-            </div>
-            <hr>
-            <div class="row">
-
-              <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?>assets/images/269377_deretan-mobil-konsep-iims-2014_663_382.jpg" class="img-responsive" alt="Responsive image">
-              </div>
-              <div class="col-xs-5 col-md-7"><a href="" >Ban mobil murah</a></div>
-            </div>
-            <hr>
+          <?php } ?>
+            
             
           </div>
         </div>

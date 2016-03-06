@@ -81,52 +81,52 @@ class Model_global extends CI_Model {
        $query = $this->db->query($data);
     }
 
-    function insert($data) {
-        $insert = $this->db->insert('posting', $data); //nama tabel, terus data yang mo di masukkan
+    function insert($data, $tabel) {
+        $insert = $this->db->insert($tabel, $data); //nama tabel, terus data yang mo di masukkan
         return $insert;
     }
 
-    function total_paging($query){
-        $sql_query=$this->db->query($query); 
-        return $sql_query->num_rows();
-    }
+//     function total_paging($query){
+//         $sql_query=$this->db->query($query); 
+//         return $sql_query->num_rows();
+//     }
 
-    function data_paging($query){
-        $this->db->order_by("id_iklan", "desc");  
-        $sql_query=$this->db->query($query); 
-            if($sql_query->num_rows()>0){
-                return $sql_query->result_array();
-            }
-    }   
+//     function data_paging($query){
+//         $this->db->order_by("id_iklan", "desc");  
+//         $sql_query=$this->db->query($query); 
+//             if($sql_query->num_rows()>0){
+//                 return $sql_query->result_array();
+//             }
+//     }   
 
     
 
-    public function TotalPosting() {
-    $sql_query=$this->db->get('posting'); 
-    return $sql_query->num_rows();
-    }
+//     public function TotalPosting() {
+//     $sql_query=$this->db->get('posting'); 
+//     return $sql_query->num_rows();
+//     }
 
-    public function TotalPosting_kategori($kategori) {
-    $sql_query=$this->db->get_where('posting', array('kategori' => $kategori)); 
-    return $sql_query->num_rows();
-    }
+//     public function TotalPosting_kategori($kategori) {
+//     $sql_query=$this->db->get_where('posting', array('kategori' => $kategori)); 
+//     return $sql_query->num_rows();
+//     }
 
-    public function Tampilkategori($perPage, $uri) {
+//     public function Tampilkategori($perPage, $uri) {
         
-    $this->db->order_by("id_iklan", "desc");  
-    $sql_query=$this->db->get('iklan',$perPage, $uri); 
-            if($sql_query->num_rows()>0){
-                return $sql_query->result_array();
-            }
-    }   
-     public function TampilPosting_kategori($perPage, $uri ,$kategori) {
-   // $this->db->where('posting', array('kategori' => 'Entertainment'));  
-    $this->db->order_by("id_posting", "desc");  
-    $sql_query=$this->db->get_where('posting', array('kategori' => $kategori),$perPage, $uri); 
-            if($sql_query->num_rows()>0){
-                return $sql_query->result_array();
-            }
-    }   
+//     $this->db->order_by("id_iklan", "desc");  
+//     $sql_query=$this->db->get('iklan',$perPage, $uri); 
+//             if($sql_query->num_rows()>0){
+//                 return $sql_query->result_array();
+//             }
+//     }   
+//      public function TampilPosting_kategori($perPage, $uri ,$kategori) {
+//    // $this->db->where('posting', array('kategori' => 'Entertainment'));  
+//     $this->db->order_by("id_posting", "desc");  
+//     $sql_query=$this->db->get_where('posting', array('kategori' => $kategori),$perPage, $uri); 
+//             if($sql_query->num_rows()>0){
+//                 return $sql_query->result_array();
+//             }
+//     }   
 
 
 
@@ -134,39 +134,39 @@ class Model_global extends CI_Model {
 
 
 
-function cek_user($data) {
-            $query = $this->db->get_where('user', $data);
-            return $query;
-        }
+// function cek_user($data) {
+//             $query = $this->db->get_where('user', $data);
+//             return $query;
+//         }
 
 
 
-    function update($id, $data) {
-        $this->db->where('nim', $id);
-        $update = $this->db->update('mahasiswa', $data);
-        return $update;
-    }
+//     function update($id, $data) {
+//         $this->db->where('nim', $id);
+//         $update = $this->db->update('mahasiswa', $data);
+//         return $update;
+//     }
 
-    function delete($id) {
-        $this->db->where('nim', $id);
-        $delete = $this->db->delete('mahasiswa');
-        return $delete;
-    }
+//     function delete($id) {
+//         $this->db->where('nim', $id);
+//         $delete = $this->db->delete('mahasiswa');
+//         return $delete;
+//     }
 
-    function getAll() {
-        $query = $this->db->get('mahasiswa');
-        if ($query->num_rows() > 0) {
-            return $query->result();
-        } else {
-            return array();
-        }
-    }
+//     function getAll() {
+//         $query = $this->db->get('mahasiswa');
+//         if ($query->num_rows() > 0) {
+//             return $query->result();
+//         } else {
+//             return array();
+//         }
+//     }
    
-    function get_by_id($id){
-        $this->db->where('nim',$id);
-        $query=$this->db->get('mahasiswa');
-        return $query->result();
-    }
+//     function get_by_id($id){
+//         $this->db->where('nim',$id);
+//         $query=$this->db->get('mahasiswa');
+//         return $query->result();
+//     }
 
 }
 
