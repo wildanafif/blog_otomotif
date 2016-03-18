@@ -80,7 +80,7 @@
              <div class="row">
 
               <div class="col-xs-5 col-md-5"> 
-                <img src="<?=base_url()?><?php echo $key->temp_foto; ?>" class="img-responsive" alt="Responsive image">
+                <img src="<?=base_url()?><?php echo $key->temp_foto; ?>" class="img-responsive" alt="<?php echo $key->judul_iklan; ?>">
               </div>
               <div class="col-xs-5 col-md-7"><a target="_BLANK" href="http://localhost/otomotif/iklan/view/<?php echo $key->id_iklan; ?>/<?php echo $key->waktu; ?>" ><?php echo $key->judul_iklan; ?></a></div>
             </div>

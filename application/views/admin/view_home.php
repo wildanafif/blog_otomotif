@@ -28,6 +28,15 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
+                    <div class="alert alert-success" role="alert">
+                        <strong>
+                            Demi Kenyamanan kualitas gambar silahkan klik sumber pada menu isian tambahkan kode berikut ke dalam tag img (gambar bersangkutan)
+                       
+                        </strong><br>
+                        <hr>
+                        class="img-responsive"
+                    </div>
+                    
                   <form class="form-horizontal" method="POST" action="<?php echo site_url(); ?>posting/add">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>

@@ -36,39 +36,24 @@
 	 
 	  	<div class="panel panel-default">
 		  <div class="panel-body">
-		    <h3 id=media-list>7 Komentar</h3> 
+                      <h3 id="media-list"><?php echo $jumlah_komentar['jml'] ?> Komentar</h3> 
 		    <hr>
-	  		
-		  		 <div class=bs-example data-example-id=media-list> 
-		  		 	<ul class=media-list> 
-		  		 		<li class=media> 
-		  		 			<div class=media-left> 
-		  		 				<a href=#> <img class=media-object data-src=holder.js/64x64 alt="Generic placeholder image"> </a> 
+                            <?php foreach ($komentar as $key) { ?>
+                        
+                    
+		  		 <div class="bs-example data-example" id="media-list"> 
+		  		 	<ul class="media-list"> 
+		  		 		<li class="media"> 
+		  		 			
+		  		 			<div class="media-body"> 
+                                                            <h3 class="media-heading"><?php echo $key->nama; ?></h3> 
+		  		 				<p><?php echo $key->isi_komentar; ?></p>  		  		 				
 		  		 			</div> 
-		  		 			<div class=media-body> 
-		  		 				<h4 class=media-heading>Media heading</h4> 
-		  		 				<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>  
-		  		 				<div class=media> 
-		  		 					<div class=media-left> 
-		  		 						<a href=#> 
-		  		 							<img class=media-object data-src=holder.js/64x64 alt="Generic placeholder image"> 
-		  		 						</a> 
-		  		 					</div> 
-		  		 					<div class=media-body> 
-		  		 						<h4 class=media-heading>bkhkg</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.  
-
-		  		 					</div> 
-		  		 				</div>  
-		  		 				<div class=media> 
-		  		 					<div class=media-left> <a href=#> <img class=media-object data-src=holder.js/64x64 alt="Generic placeholder image"> </a> </div> 
-		  		 					<div class=media-body> 
-		  		 						<h4 class=media-heading>Nested media </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
-		  		 					</div> 
-		  		 				</div> 
-		  		 			</div> 
-		  		 		</li> 
+                                                </li> 
 		  		 	</ul> 
 		  		 </div>
+                                    <hr>
+                                 <?php } ?>
 		  </div>
 		</div>
 	  		 
@@ -78,23 +63,24 @@
 	  	<div class="panel panel-default">
 		  <div class="panel-heading"><h3>Komentar</h3></div>
 		  <div class="panel-body">
-		    <form class="form-horizontal">
+                      <form class="form-horizontal" method="POST" action="<?php echo site_url() ?>comment/add_comment">
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
 			    <div class="col-sm-10">
-			      <input type="name" class="form-control"  placeholder="Email">
+                                <input type="name" name="nama_komentar"  class="form-control"  placeholder="Nama">
+                              <input type="hidden" name="id_artikel" value="<?php echo $artikel['id_artikel']; ?>" >
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">Komentar</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="3"  > </textarea>
+                                <textarea class="form-control" rows="3" name="isi_komentar" > </textarea>
 			    </div>
 			  </div>
 			
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">Kirim</button>
+                                <button type="submit" class="btn btn-default" value="kirim" name="komentar" >Kirim</button>
 			    </div>
 			  </div>
 			</form>

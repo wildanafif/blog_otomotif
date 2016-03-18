@@ -21,9 +21,9 @@ class Posting extends CI_Controller {
            	$isi=$this->input->post('editor');
            	$header_image=$this->input->post('header_image');
 
-        	date_default_timezone_set("Asia ");
+        	date_default_timezone_set("Asia/Jakarta");
    			  	$t_tgl=date("Y-m-d");
-            	// $day = date('D', strtotime($tanggal));
+            	 $day = date('D', strtotime($t_tgl));
             	
 			$dayList = array(
 				'Sun' => 'Minggu',
