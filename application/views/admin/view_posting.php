@@ -15,28 +15,139 @@
 
     <!-- Main content -->
     <section class="content">
+
         <div class="row">
-
-
             <div class="col-md-12">
-                <div class="box box-default">
+                <!-- TABLE: LATEST ORDERS -->
+                <div class="box box-info">
                     <div class="box-header with-border">
-                        <i class="fa fa-bullhorn"></i>
-                        <h3 class="box-title">Welcome !!!</h3>
+                        <h3 class="box-title">Tambah Posting</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
                     </div><!-- /.box-header -->
                     <div class="box-body">
+                        <div class="alert alert-success" role="alert">
+                            <strong>
+                                Demi Kenyamanan kualitas gambar silahkan klik sumber pada menu isian tambahkan kode berikut ke dalam tag img (gambar bersangkutan)
 
-                        <div class="callout callout-info">
-                            <h3>Selamat Datang di sistem manajemen konten otomotifstore.com <?php echo $_SESSION['nama']; ?></h3>
+                            </strong><br>
                             <hr>
-                            <h4>Silahkan Kelola Situs Otomotifstore.com</h4>
+                            class="img-responsive"
                         </div>
 
+                        <form class="form-horizontal" method="POST" action="<?php echo site_url(); ?>posting/add">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="judul"  placeholder="Judul . . .">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Kategori</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="kategori">
+                                        <option></option>
+                                        <option>Mobil</option>
+                                        <option>Motor</option>
+                                        <option>Oto tips</option>
+                                        <option>Oto Club</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Header image</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="header_image"  placeholder="http://">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Isi </label>
+                                <div class="col-sm-10">
+                                    <textarea class="ckeditor" name="editor" id="editor1"  ></textarea>
+                                    <script type="text/javascript">
+                                        CKEDITOR.replace('editor1',
+                                                {
+                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/browse.php',
+                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/browse.php?type=Images',
+                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/browse.php?type=Flash',
+                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/admin/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
+                                                });
+                                    </script>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-sm btn-info btn-flat pull-right">Simpan Artikel </button>
+
+                                </div>
+                            </div>
+                        </form>
+
                     </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                    </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
-        </div>
+        </div><!-- /.row -->
 
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- TABLE: LATEST ORDERS -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Latest Posting</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>Judul</th>
+                                        <th>Kategori</th>
+                                        <th>Waktu</th>
+                                        <th>Di lihat</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($posting as $key) { ?>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html"><?php echo $key['judul_artikel']; ?></a></td>
+                                            <td><?php echo $key['kategori']; ?></td>
+                                            <td><span class="label label-success"><?php echo $key['waktu']; ?></span></td>
+                                            <td><?php echo $key['view']; ?></td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="...">
+                                                    <button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    <button type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                                   
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </table>
+                        </div><!-- /.table-responsive -->
+                    </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <center><?php echo $halaman; ?></center>
+                    </div><!-- /.box-footer -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
 
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

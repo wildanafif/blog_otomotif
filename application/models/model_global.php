@@ -86,18 +86,18 @@ class Model_global extends CI_Model {
         return $insert;
     }
 
-//     function total_paging($query){
-//         $sql_query=$this->db->query($query); 
-//         return $sql_query->num_rows();
-//     }
+     function total_paging($query){
+         $sql_query=$this->db->query($query); 
+         return $sql_query->num_rows();
+     }
 
-//     function data_paging($query){
-//         $this->db->order_by("id_iklan", "desc");  
-//         $sql_query=$this->db->query($query); 
-//             if($sql_query->num_rows()>0){
-//                 return $sql_query->result_array();
-//             }
-//     }   
+     function data_paging($query){
+         $this->db->order_by("id_iklan", "desc");  
+         $sql_query=$this->db->query($query); 
+             if($sql_query->num_rows()>0){
+                 return $sql_query->result_array();
+             }
+     }   
 
     
 
@@ -134,10 +134,10 @@ class Model_global extends CI_Model {
 
 
 
-// function cek_user($data) {
-//             $query = $this->db->get_where('user', $data);
-//             return $query;
-//         }
+ function cek_user($data) {
+             $query = $this->db->get_where('user', $data);
+             return $query;
+         }
 
 
 
