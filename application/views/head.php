@@ -1,18 +1,10 @@
 
-
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
 <title><?php echo $title;?></title>
 <link href="<?=base_url()?>assets/css/style_image_view.css" rel="stylesheet" type="text/css" media="all" />   
 <link href="<?=base_url()?>assets/css/Site.min.css" rel="stylesheet">
-<link href="<?=base_url()?>assets/css/social-sharing-buttons.css" rel="stylesheet">
 
 
 <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -47,182 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--jQuery-->
      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="<?=base_url()?>aset/js/jquery.filer.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#input1').filer();
-        
-        $('.file_input').filer({
-            showThumbs: true,
-            templates: {
-                box: '<ul class="jFiler-item-list"></ul>',
-                item: '<li class="jFiler-item">\
-                            <div class="jFiler-item-container">\
-                                <div class="jFiler-item-inner">\
-                                    <div class="jFiler-item-thumb">\
-                                        <div class="jFiler-item-status"></div>\
-                                        <div class="jFiler-item-info">\
-                                            <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
-                                        </div>\
-                                        {{fi-image}}\
-                                    </div>\
-                                    <div class="jFiler-item-assets jFiler-row">\
-                                        <ul class="list-inline pull-left">\
-                                            <li><span class="jFiler-item-others">{{fi-icon}} {{fi-size2}}</span></li>\
-                                        </ul>\
-                                        <ul class="list-inline pull-right">\
-                                            <li></li>\
-                                        </ul>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </li>',
-                itemAppend: '<li class="jFiler-item">\
-                            <div class="jFiler-item-container">\
-                                <div class="jFiler-item-inner">\
-                                    <div class="jFiler-item-thumb">\
-                                        <div class="jFiler-item-status"></div>\
-                                        <div class="jFiler-item-info">\
-                                            <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
-                                        </div>\
-                                        {{fi-image}}\
-                                    </div>\
-                                    <div class="jFiler-item-assets jFiler-row">\
-                                        <ul class="list-inline pull-left">\
-                                            <span class="jFiler-item-others">{{fi-icon}} {{fi-size2}}</span>\
-                                        </ul>\
-                                        <ul class="list-inline pull-right">\
-                                            <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
-                                        </ul>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </li>',
-                progressBar: '<div class="bar"></div>',
-                itemAppendToEnd: true,
-                removeConfirmation: true,
-                _selectors: {
-                    list: '.jFiler-item-list',
-                    item: '.jFiler-item',
-                    progressBar: '.bar',
-                    remove: '.jFiler-item-trash-action',
-                }
-            },
-            addMore: true,
-            
-        });
-        
-        $('#input2').filer({
-            limit: null,
-            maxSize: null,
-            extensions: null,
-            changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Drag&Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
-            showThumbs: true,
-            appendTo: null,
-            theme: "dragdropbox",
-            templates: {
-                box: '<ul class="jFiler-item-list"></ul>',
-                item: '<li class="jFiler-item">\
-                            <div class="jFiler-item-container">\
-                                <div class="jFiler-item-inner">\
-                                    <div class="jFiler-item-thumb">\
-                                        <div class="jFiler-item-status"></div>\
-                                        <div class="jFiler-item-info">\
-                                            <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
-                                        </div>\
-                                        {{fi-image}}\
-                                    </div>\
-                                    <div class="jFiler-item-assets jFiler-row">\
-                                        <ul class="list-inline pull-left">\
-                                            <li>{{fi-progressBar}}</li>\
-                                        </ul>\
-                                        <ul class="list-inline pull-right">\
-                                            <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
-                                        </ul>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </li>',
-                itemAppend: '<li class="jFiler-item">\
-                            <div class="jFiler-item-container">\
-                                <div class="jFiler-item-inner">\
-                                    <div class="jFiler-item-thumb">\
-                                        <div class="jFiler-item-status"></div>\
-                                        <div class="jFiler-item-info">\
-                                            <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
-                                        </div>\
-                                        {{fi-image}}\
-                                    </div>\
-                                    <div class="jFiler-item-assets jFiler-row">\
-                                        <ul class="list-inline pull-left">\
-                                            <span class="jFiler-item-others">{{fi-icon}} {{fi-size2}}</span>\
-                                        </ul>\
-                                        <ul class="list-inline pull-right">\
-                                            <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
-                                        </ul>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </li>',
-                progressBar: '<div class="bar"></div>',
-                itemAppendToEnd: false,
-                removeConfirmation: false,
-                _selectors: {
-                    list: '.jFiler-item-list',
-                    item: '.jFiler-item',
-                    progressBar: '.bar',
-                    remove: '.jFiler-item-trash-action',
-                }
-            },
-            uploadFile: {
-                url: "./php/upload.php",
-                data: {},
-                type: 'POST',
-                enctype: 'multipart/form-data',
-                beforeSend: function(){},
-                success: function(data, el){
-                    var parent = el.find(".jFiler-jProgressBar").parent();
-                    el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                        $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");    
-                    });
-                },
-                error: function(el){
-                    var parent = el.find(".jFiler-jProgressBar").parent();
-                    el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                        $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");    
-                    });
-                },
-                statusCode: {},
-                onProgress: function(){},
-            },
-            dragDrop: {
-                dragEnter: function(){},
-                dragLeave: function(){},
-                drop: function(){},
-            },
-            addMore: true,
-            clipBoardPaste: true,
-            excludeName: null,
-            beforeShow: function(){return true},
-            onSelect: function(){},
-            afterShow: function(){},
-            onRemove: function(){},
-            onEmpty: function(){},
-            captions: {
-                button: "Choose Files",
-                feedback: "Choose files To Upload",
-                feedback2: "files were chosen",
-                drop: "Drop file here to Upload",
-                removeConfirmation: "Are you sure you want to remove this file?",
-                errors: {
-                    filesLimit: "Only {{fi-limit}} files are allowed to be uploaded.",
-                    filesType: "Only Images are allowed to be uploaded.",
-                    filesSize: "{{fi-name}} is too large! Please upload file up to {{fi-maxSize}} MB.",
-                    filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
-                }
-            }
-        });
-    });
-    </script>
+  
         <script src="<?=base_url()?>assets/js/bootstrap.js"></script>
         
 <script type="text/javascript" src="<?=base_url()?>assets/js/bootstrapValidator.js"></script>
@@ -319,6 +136,24 @@ function add_modal_sub_kategori(nama_sub_kategori){
       $("#modal_kategori").modal('hide');
      
 };
+
+
+
+
+$(document).ready(function() {
+    $('#sad').click(function(){
+    	var collapse_content_selector = '#sub_menu';					
+	var toggle_switch = $(this);
+	$(collapse_content_selector).toggle(function(){
+            if($(this).css('display')=='none'){
+                toggle_switch.html('Pilih Kanal&nbsp;  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');//change the button label to be 'Show'
+            }else{
+                toggle_switch.html('Tutup Kanal&nbsp;  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>');//change the button label to be 'Hide'
+		}
+	});
+    });				
+});	
+
 </script>
 
 
@@ -339,136 +174,138 @@ function add_modal_sub_kategori(nama_sub_kategori){
 
 <body> 
 
-<nav class="navbar navbar-default muncul">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<?php echo site_url(); ?>">
-        <img alt="Brand" class="img-responsive" src="<?php echo site_url(); ?>assets/img/logoe.png" style="margin-top:-7%;">
-      </a>
-    </div>
+ <nav class="navbar navbar-default muncul">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                        <img alt="Brand" class="img-responsive" src="<?php echo site_url(); ?>assets/img/f_lg2.png" style="margin-top:-7%;">
+                    </a>
+                </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-     
-      <ul class="nav navbar-nav navbar-right" style="color:#21AEE8;">
-        <li>
-            <a href="<?php echo site_url(); ?>"> 
-                <i class="icon-white icon-home"></i> Beranda
-            </a>
-        </li>
-        <?php  if (isset($_SESSION['nama'])) { ?>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <?php if (isset($favorit['favorit'])) {
-               
-             ?>
-                  <li>
-                          <a href="<?php echo site_url()?>favorite" style="color:#21AEE8;" > <i class="glyphicon glyphicon-star-empty"> 
 
-                            
-                    </i>Favorit (<?php echo $favorit['favorit']; ?>)</a>
-                  </li>
-                  <?php }; ?>
-              
-                       <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#21AEE8;"><i class="icon-white icon-user">
-                    </i>  <?php echo $_SESSION['nama']; ?> <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            
-                            <li><a href="<?php echo site_url(); ?>iklansaya">iklan saya</a></li>
-                            <li><a href="<?php echo site_url()?>profil/setting">Pengaturan</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo site_url()?>auth/logout">Keluar</a></li>
-                          </ul>
+                    <ul class="nav navbar-nav navbar-right" style="color:#21AEE8;">
+                        <li>
+                            <a href="<?php echo site_url(); ?>"> 
+                                <i class="icon-white icon-home"></i> Beranda
+                            </a>
                         </li>
-                <?php }else { ?>
+<?php if (isset($_SESSION['nama'])) { ?>
 
-                <li >
-                        <a href="<?php echo site_url()?>auth/masuk" style="color:#21AEE8;" > <i class="icon-white icon-user">
-                    </i>  Akun Saya <i class="fa fa-angle-down"></i></a>
-                        
-                    </li>
-                    <?php } ?>
-                    <li  >
-                        <a href="<?php echo site_url()?>iklan" style="color:#21AEE8;"> <i class="icon-white icon-plus">
-                    </i>  Pasang Iklan <i class="fa fa-angle-down"></i></a>
-                        
-                    </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!--header-->  
-  <header style="background-color:#fff;" class="hilang">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                  <a class="navbar-brand" href="<?php echo site_url(); ?>">
-                    <img alt="Brand" class="img-responsive" src="<?php echo site_url(); ?>assets/img/logoe.png" style="margin-top:8%;">
-                  </a>
-            </div>
+                            <?php if (isset($favorit['favorit'])) {
+                                ?>
+                                <li>
+                                    <a href="<?php echo site_url() ?>favorite" style="color:#21AEE8;" > <i class="glyphicon glyphicon-star-empty"> 
 
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="<?=base_url()?>" style="color:#000000;">  <i class="icon-white icon-home"></i> Beranda
-            </a>    </a></li>
-                   
-                    
-                    
-                </ul>
-                <ul class="nav navbar-nav navbar-right profile">
-              
-                  <?php  if (isset($_SESSION['nama'])) { ?>
-                  <?php if (isset($favorit['favorit'])) {
-                    
-                  ?>
-                  <li>
-                          <a href="<?php echo site_url()?>favorite" > <i class="glyphicon glyphicon-star-empty"> 
 
-                            
-                    </i>Favorit (<?php echo $favorit['favorit']; ?>)</a>
-                  </li>
-                  <?php }; ?>
-              
-                       <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-white icon-user">
-                    </i>  <?php echo $_SESSION['nama']; ?> <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            
-                            <li><a href="<?php echo site_url(); ?>iklansaya">iklan saya</a></li>
-                            <li><a href="<?php echo site_url()?>profil/setting">Pengaturan</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo site_url()?>auth/logout">Keluar</a></li>
-                          </ul>
+                                        </i>Favorit (<?php echo $favorit['favorit']; ?>)</a>
+                                </li>
+    <?php }; ?>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#21AEE8;"><i class="icon-white icon-user">
+                                    </i>  <?php echo $_SESSION['nama']; ?> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="<?php echo site_url(); ?>iklansaya">iklan saya</a></li>
+                                    <li><a href="<?php echo site_url() ?>profil/setting">Pengaturan</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="<?php echo site_url() ?>auth/logout">Keluar</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+
+                            <li >
+                                <a href="<?php echo site_url() ?>auth/masuk" style="color:#21AEE8;" > <i class="icon-white icon-user">
+                                    </i>  Akun Saya <i class="fa fa-angle-down"></i></a>
+
+                            </li>
+<?php } ?>
+                        <li  >
+                            <a href="<?php echo site_url() ?>iklan" style="color:#21AEE8;"> <i class="icon-white icon-plus">
+                                </i>  Pasang Iklan <i class="fa fa-angle-down"></i></a>
+
                         </li>
-                <?php }else { ?>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!--header-->  
+        <header style="background-color:#fff;" class="hilang">
+            <div class="container">
+                <div class="navbar-header" style="width:auto;">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                        <img alt="Brand" class="img-responsive" src="<?php echo site_url(); ?>assets/img/f_lg2.png" style="margin-top:2%;margin-left: -20px;">
+                    </a>
+                </div>
 
-              
-                    <?php } ?>
-                    <li style="background-color:#3399ff;">
-                        <a style="color:#fff;" href="<?php echo site_url()?>iklan"  > <i class="icon-white icon-plus">
-                    </i>  Pasang Iklan <i class="fa fa-angle-down"></i></a>
-                        
-                    </li>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?= base_url() ?>" style="color:#000000;">  <i class="icon-white icon-home"></i> Beranda
+                            </a>    </a></li>
 
-                 
-                </ul>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right profile">
+
+<?php if (isset($_SESSION['nama'])) { ?>
+    <?php if (isset($favorit['favorit'])) {
+        ?>
+                                <li>
+                                    <a href="<?php echo site_url() ?>favorite" > <i class="glyphicon glyphicon-star-empty"> 
+
+
+                                        </i>Favorit (<?php echo $favorit['favorit']; ?>)</a>
+                                </li>
+    <?php }; ?>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-white icon-user">
+                                    </i>  <?php echo $_SESSION['nama']; ?> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="<?php echo site_url(); ?>iklansaya">iklan saya</a></li>
+                                    <li><a href="<?php echo site_url() ?>profil/setting">Pengaturan</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="<?php echo site_url() ?>auth/logout">Keluar</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+
+                            <li >
+                                <a href="<?php echo site_url() ?>auth/masuk" > <i class="icon-white icon-user">
+                                    </i>  Akun Saya <i class="fa fa-angle-down"></i></a>
+
+                            </li>
+<?php } ?>
+                        <li style="background-color:#3399ff;">
+                            <a style="color:#fff;" href="<?php echo site_url() ?>iklan"  > <i class="icon-white icon-plus">
+                                </i>  Pasang Iklan <i class="fa fa-angle-down"></i></a>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
             </div>
-            <!--/.nav-collapse -->
-        </div>
-    </header> 
+        </header> 
 
    
 
@@ -476,43 +313,56 @@ function add_modal_sub_kategori(nama_sub_kategori){
         <div id="body" class="shadowBox" style="margin-top:-19px;">
 
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-</a>
-    </div>
+            <nav class="navbar navbar-default hilang">
+                <div class="container" >
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        </a>
+                    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="<?php echo site_url(); ?>c/kategori/mobil">Mobil <span class="sr-only">(current)</span></a></li>
-        <li><a href="">Motor</a></li>
-         <li><a href="#">Ototips</a></li>
-          <li><a href="#">Oto Club</a></li>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="<?php echo site_url(); ?>c/kategori/mobil">Mobil <span class="sr-only">(current)</span></a></li>
+                            <li><a href="">Motor</a></li>
+                            <li><a href="#">OtoTips</a></li>
+                            <li><a href="#">OtoTv</a></li>
+
+                        </ul>
+
+                        
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            
+            
+            <nav class="navbar navbar-default muncul" style="background-color: #ffffff; color: #ffffff" >
+                <div class="container" >
+                    <div class="navbar-header" >
+                        <a class="navbar-brand" href="#" style="color: #000000" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        </a>
+                        <ul class="nav navbar-nav navbar-right" style="float: right; margin-right: 10px;" >
+                            
+                            <li><a href="#" style="color: #39F"  id="sad" >Pilih Kanal&nbsp;  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></li>
+                            
+                        </ul>
+                            
+                    </div>
+                    
+                    <ul class="nav navbar-nav navbar-right" style="color:#21AEE8; display: none" id="sub_menu" >
+                        <hr>
+                        <li><a href="" style="color: #000000"  >Mobil</a></li>
+                        <li><a href="" style="color: #000000">Motor</a></li>
+                        <li><a href="" style="color: #000000">OtoTips</a></li>
+                        <li><a href="" style="color: #000000">OtoTv</a></li>
+                    </ul>
+                </div><!-- /.container-fluid -->
+            </nav>
        
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
